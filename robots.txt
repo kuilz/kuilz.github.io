@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://blog.1011yueai.top/sitemap.xml
+Sitemap: https://kuilz.github.io/sitemap.xml
