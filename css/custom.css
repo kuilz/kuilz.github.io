@@ -1,4 +1,7 @@
 h1.title::before { content: "✒︎"; }
+body img {
+  pointer-events: none;
+}
 .main {
   line-height: 1.75;
 }
