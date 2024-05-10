@@ -1,6 +1,12 @@
 h1.title::before { content: "✒︎"; }
-body img {
+/* 禁止所有图片响应指针事件 */
+img {
   pointer-events: none;
+}
+
+/* 但确保 logo 区域内的图片可以响应指针事件 */
+.logo img {
+  pointer-events: all;
 }
 .main {
   line-height: 1.75;
