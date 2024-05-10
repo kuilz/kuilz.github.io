@@ -1,4 +1,11 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.github.io/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Sun, 31 Dec 2023 10:22:48 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/" rel="self" type="application/rss+xml"/><item><title>2023 kuilz 年度最佳</title><link>https://kuilz.github.io/post/2023/12/2023_annual_summary/</link><pubDate>Sun, 31 Dec 2023 10:22:48 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2023/12/2023_annual_summary/</guid><description><![CDATA[
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.github.io/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Fri, 10 May 2024 16:26:22 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/" rel="self" type="application/rss+xml"/><item><title>设计模式——策略模式</title><link>https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/</link><pubDate>Fri, 10 May 2024 16:26:22 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/</guid><description><![CDATA[
+        <h2 id="前言">前言</h2>
+<p>最近闲暇时在看<a href="https://book.douban.com/subject/35097022/">《Head First Design Pattern》</a>这本书，感觉蛮有意思的，不妨记录一下。</p>
+<p>叠甲：笔者才疏学浅，水平有限，错漏之处，欢迎指出。</p>
+<h2 id="正文">正文</h2>
+<p>面向对象设计有几个基本特性：[&hellip;] <a href="https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/">https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/</a></p>
+        
+        ]]></description></item><item><title>2023 kuilz 年度最佳</title><link>https://kuilz.github.io/post/2023/12/2023_annual_summary/</link><pubDate>Sun, 31 Dec 2023 10:22:48 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2023/12/2023_annual_summary/</guid><description><![CDATA[
         <p>本来想写年度总结呢，但我太喜欢反思了，导致写的内容不是客观描述做的事情、学的东西，而是充满了琐碎细节和吐槽。年度总结留着自己看吧，在这里分享一下轻松愉快的颁奖环节。</p>
 <h2 id="读书">读书</h2>
 <p><strong>最佳文学奖</strong></p>
