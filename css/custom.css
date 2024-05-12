@@ -83,6 +83,10 @@ ol ol {
 code[class="fullwidth"] {
   background: none;
 }
+.fullwidth {
+  width: 100%;
+  margin: auto;
+}
 .comments {
   margin-top: 1em;
 }

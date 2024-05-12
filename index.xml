@@ -1,4 +1,9 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.github.io/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Fri, 10 May 2024 16:26:22 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/" rel="self" type="application/rss+xml"/><item><title>设计模式——策略模式</title><link>https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/</link><pubDate>Fri, 10 May 2024 16:26:22 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/</guid><description><![CDATA[
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.github.io/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Sun, 12 May 2024 11:11:50 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/" rel="self" type="application/rss+xml"/><item><title>Dcoker基本使用</title><link>https://kuilz.github.io/blog/2024/05/docker-intro/</link><pubDate>Sun, 12 May 2024 11:11:50 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2024/05/docker-intro/</guid><description><![CDATA[
+        <pre><code>kuilz原创性自我评估(KCSE)：10%
+</code></pre>
+<p>知道Docker很好用，但一直没养成用它的习惯，所以基本命令都记不清，然后就更不怎么用，恶性循环。。。打算以本文为契机，将Docker正式纳入我的工作[&hellip;] <a href="https://kuilz.github.io/blog/2024/05/docker-intro/">https://kuilz.github.io/blog/2024/05/docker-intro/</a></p>
+        
+        ]]></description></item><item><title>设计模式——策略模式</title><link>https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/</link><pubDate>Fri, 10 May 2024 16:26:22 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/</guid><description><![CDATA[
         <h2 id="前言">前言</h2>
 <p>最近闲暇时在看<a href="https://book.douban.com/subject/35097022/">《Head First Design Pattern》</a>这本书，感觉蛮有意思的，不妨记录一下。</p>
 <p>叠甲：笔者才疏学浅，水平有限，错漏之处，欢迎指出。</p>
@@ -39,10 +44,5 @@
         
         ]]></description></item><item><title>关于童年的一些记忆碎片</title><link>https://kuilz.github.io/post/2023/08/some_memories_of_childhood/</link><pubDate>Wed, 16 Aug 2023 16:55:11 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2023/08/some_memories_of_childhood/</guid><description><![CDATA[
         <p>小时候喜欢掏鸟钓鱼扒螃蟹，写下这三件事时我还在想为什么是钓鱼而不是摸鱼？大概是因为我太菜了，钓鱼相对于摸鱼更安全，也更没技术含量，还不会弄脏衣服挨骂。那时候还买不起鱼竿，没什么比一根长长的竹子更有吸引[&hellip;] <a href="https://kuilz.github.io/post/2023/08/some_memories_of_childhood/">https://kuilz.github.io/post/2023/08/some_memories_of_childhood/</a></p>
-        
-        ]]></description></item><item><title>About</title><link>https://kuilz.github.io/about/</link><pubDate>Tue, 30 May 2023 17:56:30 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/about/</guid><description><![CDATA[
-        <h2 id="about-me">About Me</h2>
-<p>你好呀~我叫kuilz，kuilz是我在网络上的昵称。它不是英文名，很明显也不是中文名，只是五个字母的随机组合，不过我觉得这样排列有一点好看。</p>
-<p>还是忍不住告诉你，我的名字单字一个魁，[&hellip;] <a href="https://kuilz.github.io/about/">https://kuilz.github.io/about/</a></p>
         
         ]]></description></item></channel></rss>
