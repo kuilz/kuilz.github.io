@@ -1,0 +1,109 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>设计模式——单例模式 - Kui's Blog</title>
+<meta property="og:title" content="设计模式——单例模式 - Kui's Blog"><meta name=twitter:card content="summary"><meta property="description" content="这篇文章本来还是按照上一篇的风格写的，但发现太耗费精力的，于是变成了最简单粗暴的版本。后面需要学会在有趣与直接、丰富与简洁之间找到平衡。
+[&amp;hellip;] 单例模式（Singleton Pattern）是一种设计模式，用于确保一个类只有一个实例，并提供对该实例的全局访问点。 单例模式的使用场景大多和系统资源相关，比如缓存、线程池和数据库连接池等，在这些场景中，如果实例化多个对象，可能会出现程序 &amp;hellip;"><meta property="og:description" content="这篇文章本来还是按照上一篇的风格写的，但发现太耗费精力的，于是变成了最简单粗暴的版本。后面需要学会在有趣与直接、丰富与简洁之间找到平衡。
+[&amp;hellip;] 单例模式（Singleton Pattern）是一种设计模式，用于确保一个类只有一个实例，并提供对该实例的全局访问点。 单例模式的使用场景大多和系统资源相关，比如缓存、线程池和数据库连接池等，在这些场景中，如果实例化多个对象，可能会出现程序 &amp;hellip;"><meta name=twitter:image content="https://1011yueai-imgset.oss-cn-hangzhou.aliyuncs.com/images/562f2844-d77c-40e0-887a-28a7128abd42.png"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://indestructibletype.com/fonts/Jost.css></head><body class="single blog"><div class=crop-h></div><div class=crop-v></div><div class=crop-c></div><nav class="nav-top small"><div class=logo><a href=/><img src=/images/avatar.jpg alt=kuilz></a></div><div class=menu><span><a href=/search/>Search</a></span>
+<span><a href=/>Home</a></span>
+<span><a href=/post/>Post</a></span>
+<span class=active><a href=/blog/>Blog</a></span>
+<span><a href=/categories/>Categories</a></span>
+<span><a href=/tags/>Tags</a></span>
+<span><a href=/series/>Series</a></span>
+<span><a href=/index.xml>Subscribe</a></span>
+<span><a href=/about/>About</a></span></div></nav><div class=article-meta><h1 class=title>设计模式——单例模式</h1><h3 class=meta-line><span><span class=author>kuilz</span>
+<span class=date>2024-05-13</span>
+</span><span class=term>{<a href=/categories/system-design/ class=term-cat>System Design</a>}
+<a href=/tags/design-pattern/ class=term-tag>[Design Pattern]</a></span></h3></div><div class=main><nav id=TableOfContents><ul><li><a href=#intent>Intent</a></li><li><a href=#class-diagram>Class Diagram</a></li><li><a href=#implementation>Implementation</a><ul><li><a href=#懒汉式-线程不安全>懒汉式-线程不安全</a></li><li><a href=#饿汉式-线程安全>饿汉式-线程安全</a></li><li><a href=#懒汉式-线程安全>懒汉式-线程安全</a></li><li><a href=#双重校验锁-线程安全>双重校验锁-线程安全</a></li><li><a href=#枚举实现>枚举实现</a></li></ul></li><li><a href=#jdk>JDK</a></li><li><a href=#references>References</a></li></ul></nav><p>这篇文章本来还是按照<a href=https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/>上一篇</a>的风格写的，但发现太耗费精力的，于是变成了最简单粗暴的版本。后面需要学会在有趣与直接、丰富与简洁之间找到平衡。</p><p><strong>单例模式（Singleton Pattern）是一种设计模式，用于确保一个类只有一个实例，并提供对该实例的全局访问点。</strong> 单例模式的使用场景大多和系统资源相关，比如缓存、线程池和数据库连接池等，在这些场景中，如果实例化多个对象，可能会出现程序执行结果不一致或者系统资源耗费严重的问题。</p><h2 id=intent>Intent</h2><blockquote><p>The Singleton Pattern ensures a class has only one instance, and provides a global point of access to it.</p></blockquote><h2 id=class-diagram>Class Diagram</h2><blockquote><p>使用一个私有构造函数、一个私有静态变量以及一个公有静态函数来实现。</p><p>私有构造函数保证了不能通过构造函数来创建对象实例，只能通过公有静态函数返回唯一的私有静态变量。</p><p><img src=https://1011yueai-imgset.oss-cn-hangzhou.aliyuncs.com/images/562f2844-d77c-40e0-887a-28a7128abd42.png alt=img></p></blockquote><h2 id=implementation>Implementation</h2><h3 id=懒汉式-线程不安全>懒汉式-线程不安全</h3><p>Singleton class:</p><pre><code class=language-java>package org.kuilz.SingletonPattern.LazyUnsafe;
+
+public class Singleton {
+    private static Singleton singleton;
+    private Singleton(){}
+    public static Singleton getInstance() {
+        if (singleton == null) {
+            singleton = new Singleton();
+        }
+        return singleton;
+    }
+}
+
+</code></pre><p>SingletonTest class:</p><pre><code class=language-java>package org.kuilz.SingletonPattern.LazyUnsafe;
+
+public class SingletonTest {
+    public static void main(String[] args) {
+        int numThreads = 10;
+        Thread[] threads = new Thread[numThreads];
+        for (int i = 0; i &lt; numThreads; i++) {
+            threads[i] = new Thread(new MyRunnable());
+            threads[i].start();
+        }
+    }
+    static class MyRunnable implements Runnable {
+        @Override
+        public void run() {
+            Singleton singleton = Singleton.getInstance();
+            System.out.println(&quot;Thread: &quot; + Thread.currentThread().getId() + &quot;, Singleton hashCode: &quot; + singleton.hashCode());
+        }
+    }
+}
+
+</code></pre><p>Output:</p><pre><code class=language-java>Thread: 26, Singleton hashCode: 43190021
+Thread: 27, Singleton hashCode: 43190021
+Thread: 22, Singleton hashCode: 43190021
+Thread: 28, Singleton hashCode: 43190021
+Thread: 23, Singleton hashCode: 43190021
+Thread: 29, Singleton hashCode: 43190021
+Thread: 24, Singleton hashCode: 43190021
+Thread: 21, Singleton hashCode: 43190021
+Thread: 20, Singleton hashCode: 1102734481
+Thread: 25, Singleton hashCode: 2046608170
+</code></pre><p>这是我们最容易想出来的实现，但多线程并发时，可能有多个线程进入 if 代码块，从而实例化多个对象，因此<strong>这种方法没啥用</strong>。为了解决该问题，我们可以想到几个解决方案：</p><ol><li>定义时就new，这样类加载时就会实例化对象。</li><li>getter方法上添加synchronized关键字，保证每次只有一个线程进入。</li></ol><p>这两种方法都是线程安全的，分别对应饿汉式-线程安全和懒汉式-线程安全。这名字起了不如不起🥲，反而让人记不住。我们只需要记住<strong>懒汉式指的是lazy加载，需要用到时才实例化。饿汉式指的是eager加载，类加载器加载类时就进行实例化。</strong></p><h3 id=饿汉式-线程安全>饿汉式-线程安全</h3><pre><code class=language-java>package org.kuilz.SingletonPattern.EargeSafe;
+
+public class Singleton {
+    private static Singleton singleton=new Singleton();
+    private Singleton(){}
+    public static Singleton getInstance() {
+        return singleton;
+    }
+}
+
+</code></pre><p>这种方法的缺点是就算你用不到该对象，也会实例化出来，所以<strong>适用于资源充裕的情况。</strong></p><h3 id=懒汉式-线程安全>懒汉式-线程安全</h3><pre><code class=language-java>package org.kuilz.SingletonPattern.LazySafe;
+
+public class Singleton {
+    private static Singleton singleton;
+    private Singleton(){}
+    public static synchronized Singleton getInstance() {
+        if (singleton == null) {
+            singleton = new Singleton();
+        }
+        return singleton;
+    }
+}
+
+</code></pre><p>synchronized可能会使性能下降100倍，而且我们其实只有第一次访问getter时需要加锁，所以这种写法极大的降低了性能，<strong>适用于对性能要求不高的情况。</strong></p><p>怎么解决呢？可以自然地想到，那就不对整个函数使用synchronized加锁了，只对new 对象的代码块用就好了，于是引出了双重校验锁方法。</p><h3 id=双重校验锁-线程安全>双重校验锁-线程安全</h3><pre><code class=language-java>package org.kuilz.SingletonPattern.DoubleCheckSafe;
+
+public class Singleton {
+    private volatile static Singleton singleton;
+    private Singleton(){}
+    public static Singleton getInstance() {
+        if (singleton == null) {
+            synchronized (Singleton.class){
+                if(singleton==null){
+                    singleton = new Singleton();
+                }
+            }
+        }
+        return singleton;
+    }
+}
+
+</code></pre><p>看到上面的代码你可能会有两个疑问。</p><ol><li>为什么成员变量前加了个volatile？这是因为JVM具有指令重排的特性，<code>singleton = new Singleton();</code>这条语句可能会按照这样的顺序执行：①分配地址空间，②引用指向这块地址，③对象进行初始化。这样的话，可能对象还没有完成初始化就被某个线程拿到了，而volatile可以禁止指令重排。</li><li>为什么判断两次singleton是否为null？因为第一个if没加锁，可能有多个线程同时进入。如果没有第二个if判断，尽管使用了synchronized，已经进入的线程会依次实例化一个对象。</li></ol><p>双重校验锁方法有什么问题吗？还是有的，它无法适用反射、序列化的场景。下面将介绍单例模式的最佳实践：枚举。</p><h3 id=枚举实现>枚举实现</h3><pre><code class=language-java>package org.kuilz.SingletonPattern.EnumSafe;
+
+public enum Singleton {
+    UNIQUE_INSTANCE;
+}
+
+</code></pre><p><strong>枚举是单例模式的最佳实践。</strong> 看到这你是不是觉得前面的都白学了？其实并没有，经过前面拍拍脑袋想出来线程不安全的懒汉式，到一步步改进实现其他方法，这个过程我们对单例模式的理解更加深刻了。</p><p>ps：本文源码放在<a href=https://github.com/kuilz/Design-Pattern>github</a>上，配合博客食用更佳。</p><h2 id=jdk>JDK</h2><ul><li><a href=http://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html#getRuntime()>java.lang.Runtime#getRuntime()</a></li><li><a href=http://docs.oracle.com/javase/8/docs/api/java/awt/Desktop.html#getDesktop-->java.awt.Desktop#getDesktop()</a></li><li><a href=http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#getSecurityManager-->java.lang.System#getSecurityManager()</a></li></ul><h2 id=references>References</h2><ol><li><a href=https://github.com/kuilz/Design-Pattern>Code Repo</a></li><li><a href=https://book.douban.com/subject/35097022/>《Head First Design Pattern》</a></li><li><a href=https://pdai.tech/>Java 全栈知识体系</a></li></ol><nav class="post-nav fullwidth kai"><span class=nav-prev>&larr; <a href=/blog/2024/05/docker-intro/>Docker基本使用</a></span>
+<span class=nav-next>&empty; &rarr;</span></nav><div><div class=pagination__title><span class=pagination__title-h style=font-size:20px>💬评论</span><hr></div><div id=tcomment></div><script src=https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js></script><script>twikoo.init({envId:"https://twikoo-api-black.vercel.app/",el:"#tcomment",lang:"zh-CN",path:window.TWIKOO_MAGIC_PATH||window.location.pathname})</script><script id=dsq-count-scr src=//kuilz.disqus.com/count.js async></script></div></div><footer class=small><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/fix-toc.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/alt-title.min.js defer></script><link rel=stylesheet href=//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css><script src=//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js defer></script><script src=//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js defer></script><link rel=stylesheet href=//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js defer></script><link rel=stylesheet href=//cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/ol-id.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/comment-utils.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/hash-notes.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/toggle-notes.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/post-nav.min.js defer></script><hr><p class=nav-bottom><span>© <a href=https://github.com/kuilz>kuilz</a> 2023-2024</span>
+<span class=menu-bottom><a href=/blog/index.xml type=application/rss+xml title="RSS feed">Subscribe</a>
+<a href=http://creativecommons.org/licenses/by-nc-sa/4.0/ title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
+<a href=/search/>Search</a>
+<a href=#>Back to top</a></span></p></footer></body></html>
