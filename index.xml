@@ -1,6 +1,6 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.github.io/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><follow_challenge><feedId>77547801460211712</feedId><userId>77544334774356992</userId></follow_challenge><language>en-US</language><lastBuildDate>Thu, 19 Sep 2024 17:56:30 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/" rel="self" type="application/rss+xml"/><item><title>Now</title><link>https://kuilz.github.io/now/</link><pubDate>Thu, 19 Sep 2024 17:56:30 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/now/</guid><description><![CDATA[
         <div style="text-align: right;">
-    <code>update_time: 2024-10-17</code>
+    <code>update_time: 2024-11-18</code>
 </div>
 <h2 id="about-now-page">About Now Page</h2>
 <p>为什么添加这样一个页面呢？灵感来源于<a href="https://nownownow.com/about">now page</a>。对我来说，本页面主要有两个作用：</p>
