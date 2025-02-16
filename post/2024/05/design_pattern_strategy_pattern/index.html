@@ -1,0 +1,177 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>设计模式——策略模式 - Kui's Blog</title>
+<meta property="og:title" content="设计模式——策略模式 - Kui's Blog"><meta name=twitter:card content="summary"><meta property="description" content="最近闲暇时在看《Head First Design Pattern》这本书，感觉蛮有意思的，不妨记录一下。
+[&amp;hellip;] 叠甲：笔者才疏学浅，水平有限，错漏之处，欢迎指出。
+[&amp;hellip;] 面向对象设计有几个基本特性：抽象、封装、继承和多态。在设计过程中，我们会把一个事物的属性和方法封装起来，成为一个类，如果这些属性和方法是多个类通用的，我们还会把通用的部分单独封装起来，作为父类，从 &amp;hellip;"><meta property="og:description" content="最近闲暇时在看《Head First Design Pattern》这本书，感觉蛮有意思的，不妨记录一下。
+[&amp;hellip;] 叠甲：笔者才疏学浅，水平有限，错漏之处，欢迎指出。
+[&amp;hellip;] 面向对象设计有几个基本特性：抽象、封装、继承和多态。在设计过程中，我们会把一个事物的属性和方法封装起来，成为一个类，如果这些属性和方法是多个类通用的，我们还会把通用的部分单独封装起来，作为父类，从 &amp;hellip;"><meta name=twitter:image content="https://1011yueai-imgset.oss-cn-hangzhou.aliyuncs.com/images/Designer.png"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://indestructibletype.com/fonts/Jost.css></head><body class="single post"><div class=crop-h></div><div class=crop-v></div><div class=crop-c></div><nav class="nav-top small"><div class=logo><a href=/><img src=/images/avatar.jpg alt=kuilz></a></div><div class=menu><span><a href=/search/>Search</a></span>
+<span><a href=/>Home</a></span>
+<span><a href=/blog/>Blog</a></span>
+<span class=active><a href=/post/>Post</a></span>
+<span><a href=/categories/>Categories</a></span>
+<span><a href=/tags/>Tags</a></span>
+<span><a href=/series/>Series</a></span>
+<span><a href=/index.xml>Subscribe</a></span>
+<span><a href=/now/>Now</a></span>
+<span><a href=/about/>About</a></span></div></nav><div class=article-meta><h1 class=title>设计模式——策略模式</h1><h3 class=meta-line><span><span class=author>kuilz</span>
+<span class=date>2024-05-10</span>
+</span><span class=term>{<a href=/categories/system-design/ class=term-cat>System Design</a>}
+<a href=/tags/design-pattern/ class=term-tag>[Design Pattern]</a></span></h3></div><div class=main><nav id=TableOfContents><ul><li><a href=#前言>前言</a></li><li><a href=#正文>正文</a></li><li><a href=#附录-适合中国宝宝体质的笔记>附录：适合中国宝宝体质的笔记</a><ul><li><a href=#定义>定义</a></li><li><a href=#类图>类图</a></li><li><a href=#jdk>JDK</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav><h2 id=前言>前言</h2><p>最近闲暇时在看<a href=https://book.douban.com/subject/35097022/>《Head First Design Pattern》</a>这本书，感觉蛮有意思的，不妨记录一下。</p><p>叠甲：笔者才疏学浅，水平有限，错漏之处，欢迎指出。</p><h2 id=正文>正文</h2><p>面向对象设计有几个基本特性：抽象、封装、继承和多态。在设计过程中，我们会把一个事物的属性和方法封装起来，成为一个类，如果这些属性和方法是多个类通用的，我们还会把通用的部分单独封装起来，作为父类，从而实现代码复用。但一个类继承父类实现代码复用的同时，也有了一些限制：</p><ol><li>父类有的行为它都会有。</li><li>它的行为不能动态改变。</li></ol><p>这样说可能难以理解，不如从我们最先接触面向对象时的例子开始，让我们把记忆拉回到大一大二，看看熟悉的猫吃鱼，狗吃肉，奥特曼爱打小怪兽。</p><p>Animal class:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.original;
+
+public class Animal {
+    public String name;
+    public Animal(){}
+    public Animal(String name){
+        this.name=name;
+    }
+    public void eat(){
+        System.out.println(name+&quot;: &quot;+&quot;I am eating something.&quot;);
+    }
+}
+
+</code></pre><p>Cat class:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.original;
+public class Cat extends Animal{
+    public Cat(){}
+    public Cat(String name){
+        super(name);
+    }
+    @Override
+    public void eat() {
+        System.out.println(name+&quot;: &quot;+&quot;I am eating fish.&quot;);
+    }
+}
+
+</code></pre><p>Dog class:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.original;
+
+public class Dog extends Animal{
+    public Dog(){}
+    public Dog(String name){
+        super(name);
+    }
+    @Override
+    public void eat() {
+        System.out.println(name+&quot;: &quot;+&quot;I am eating meat.&quot;);
+    }
+}
+
+</code></pre><p>Main function:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.original;
+
+public class Demo {
+    public static void main(String[] args) {
+        Animal animal = new Animal(&quot;X-animal&quot;);
+        animal.eat();
+        Animal cat = new Cat(&quot;Garfield&quot;);
+        cat.eat();
+        Animal dog = new Dog(&quot;Snoopy&quot;);
+        dog.eat();
+    }
+}
+
+</code></pre><p>Output:</p><pre><code class=language-bash>X-animal: I am eating something.
+Garfield: I am eating fish.
+Snoopy: I am eating meat.
+</code></pre><p>上面的代码非常简单，Cat和Dog继承了Animal，实现了自己的eat()方法。那么我刚刚说的两个问题体现在哪里呢？</p><pre><code>1. 父类有的行为它都会有。
+2. 它的行为不能动态改变。
+</code></pre><p>先来看第一条，“父类有的行为它都会有”，继承的特点就是这样，这有什么问题吗？<strong>问题出现在我们需要添加新的方法时。</strong> 比如老板说，动物怎么可以只会吃东西呢，还要能陪主人玩。然后你就在Animal类中添加一个play()方法，结果发现狗子是挺乐意陪主人玩的，但有些高冷的猫主子并不认为自己需要这个方法，可只要是继承自Animal类的子类都要有该行为，这就出现了问题。</p><p><img src=https://1011yueai-imgset.oss-cn-hangzhou.aliyuncs.com/images/Designer.png alt=Designer></p><p>重点说说第二条，身为大学牲的你天天吃食堂，不出一个月就腻了，狗子也想换换口味，不想天天吃肉，也想啃啃骨头或者常常鱼的味道。很遗憾，刚刚的设计不能实现，也就是说Dog类的eat()方法定义好之后就不能再改变。（你别说把食物作为参数传进去就行了，如果不同动物的eat()方法只是字符串不同的话，那我们连Dog和Cat都不需要定义，这里的eat()其实是很复杂的行为😎）</p><p>解决方案是什么呢？我已经忍不住要说了啊啊啊</p><p><strong>解决方案就是把行为behavior（即这里的eat和paly）抽取出来，然后定义一组实现该行为的类，Animal拥有这些实现类的对象，并提供对应的setter用于动态修改这些行为。</strong> 直接看示例：</p><p>Animal class:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.upgrade;
+
+public class Animal {
+    public String name;
+    private EatBehavior eatBehavior;
+    public Animal(){}
+    public Animal(String name){
+        this.name=name;
+    }
+
+    public void setEatBehavior(EatBehavior eatBehavior){
+        this.eatBehavior=eatBehavior;
+    }
+    public void performEat(){
+        eatBehavior.eat(this.name);
+    }
+}
+
+</code></pre><p>Cat class:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.upgrade;
+
+public class Cat extends Animal {
+    public Cat(){}
+    public Cat(String name){
+        super(name);
+    }
+}
+
+</code></pre><p>Dog class:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.upgrade;
+
+public class Dog extends Animal {
+    public Dog(){}
+    public Dog(String name){
+        super(name);
+    }
+}
+
+</code></pre><p>EatBehavior interface:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.upgrade;
+
+public interface EatBehavior {
+    public abstract void eat(String name);
+}
+
+</code></pre><p>EatFish class:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.upgrade;
+
+public class EatFish implements EatBehavior{
+    @Override
+    public void eat(String name) {
+        System.out.println(name+&quot;: &quot;+&quot;I am eating fish.&quot;);
+    }
+}
+
+</code></pre><p>EatMeat class:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.upgrade;
+
+public class EatMeat implements EatBehavior{
+    @Override
+    public void eat(String name) {
+        System.out.println(name+&quot;: &quot;+&quot;I am eating meat.&quot;);
+    }
+}
+
+</code></pre><p>EatBone class:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.upgrade;
+
+public class EatBone implements EatBehavior{
+    @Override
+    public void eat(String name) {
+        System.out.println(name+&quot;: &quot;+&quot;I am eating bones.&quot;);
+    }
+}
+
+</code></pre><p>Main function:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.upgrade;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Demo {
+    public static void main(String[] args) {
+        EatBehavior eatFish = new EatFish();
+        EatBehavior eatBone = new EatBone();
+        EatBehavior eatMeat = new EatMeat();
+        Animal cat = new Cat(&quot;Garfield&quot;);
+        cat.setEatBehavior(eatMeat);
+        cat.performEat();
+        List&lt;EatBehavior&gt; eatBehaviors=new ArrayList&lt;&gt;();
+        eatBehaviors.add(eatFish);
+        eatBehaviors.add(eatBone);
+        eatBehaviors.add(eatMeat);
+        Animal dog = new Dog(&quot;Snoopy&quot;);
+        for(EatBehavior eatBehavior:eatBehaviors){
+            dog.setEatBehavior(eatBehavior);
+            dog.performEat();
+        }
+    }
+}
+
+</code></pre><p>Output:</p><pre><code class=language-bash>Garfield: I am eating meat.
+Snoopy: I am eating fish.
+Snoopy: I am eating bones.
+Snoopy: I am eating meat.
+</code></pre><p>这样就实现了动态修改，想吃什么吃什么（hhh是不是能看出来我更喜欢狗子。</p><p>EatBehavior我已经实现好啦，你可以试着实现PlayBehavior，源码放在<a href=https://github.com/kuilz/Design-Pattern>github</a>上，可以修改或运行一下加深印象。（如果点个⭐就更好啦😁）</p><p>最后说一下策略模式的定义：</p><blockquote><p>The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.</p><p>策略模式定义了一系列算法，每一个都单独封装起来，并使它们可以相互替换。策略模式使算法能够独立于使用它的客户而变化。</p></blockquote><p>总结来说没什么可总结的，就是字面意思：<strong>定义一系列算法或者说一组类，这些类可以相互替换，从而实现了代码复用和动态变化。</strong> 书中有一个示例可以加深理解，试一下你能不能秒懂！</p><blockquote><p>Character is the abstract class for all the other characters (King, Queen, Knight, and Troll), while WeaponBehavior is an interface that all weapon behaviors implement. So all actual characters and weapons are concrete classes.</p><p>To switch weapons, each character calls the setWeapon() method, which is defined in the Character superclass. During a fight the useWeapon() method is called on the current weapon set for a given character to inflict great bodily damage on another character.</p><p><img src=https://1011yueai-imgset.oss-cn-hangzhou.aliyuncs.com/images/image-20240510184347410.png alt=image-20240510184347410></p></blockquote><p>这个示例就是国王和王后等不同角色均继承（IS-A）自Character，Character拥有（HAS-A）WeaponBehavior的实例，以及设置该实例的setter方法。WeaponBehavior是一个接口，有一组实现类。各种角色可以在运行时动态修改使用的武器。</p><h2 id=附录-适合中国宝宝体质的笔记>附录：适合中国宝宝体质的笔记</h2><p>声明：以下内容非原创，<code>定义</code>出自<a href=https://book.douban.com/subject/35097022/>《Head First Design Pattern》</a>，<code>类图</code>和<code>JDK</code>出自<a href=https://pdai.tech/md/dev-spec/pattern/16_strategy.html>Java 全栈知识体系</a>。</p><h3 id=定义>定义</h3><p>The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.</p><p>策略模式定义了一系列算法，每一个都单独封装起来，并使它们可以相互替换。策略模式使算法能够独立于使用它的客户而变化。</p><h3 id=类图>类图</h3><ul><li>Strategy 接口定义了一个算法族，它们都具有 behavior() 方法。</li><li>Context 是使用到该算法族的类，其中的 doSomething() 方法会调用 behavior()，setStrategy(in Strategy) 方法可以动态地改变 strategy 对象，也就是说能动态地改变 Context 所使用的算法。</li></ul><p><img src=https://1011yueai-imgset.oss-cn-hangzhou.aliyuncs.com/images/1fc969e4-0e7c-441b-b53c-01950d2f2be5.png alt=img></p><h3 id=jdk>JDK</h3><ul><li>java.util.Comparator#compare()</li><li>javax.servlet.http.HttpServlet</li><li>javax.servlet.Filter#doFilter()</li></ul><p>（这些实现我还没看过。。。）</p><h2 id=参考>参考</h2><ol><li><a href=https://github.com/kuilz/Design-Pattern>Code Repo</a></li><li><a href=https://book.douban.com/subject/35097022/>《Head First Design Pattern》</a></li><li><a href=https://pdai.tech/md/dev-spec/pattern/16_strategy.html>Java 全栈知识体系</a></li></ol><nav class="post-nav fullwidth kai"><span class=nav-prev>&larr; &empty;</span>
+<span class=nav-next><a href=/post/2024/05/docker-intro/>Docker基本使用</a> &rarr;</span></nav><div><div class=pagination__title><span class=pagination__title-h style=font-size:20px>💬评论</span><hr></div><div id=tcomment></div><script src=https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js></script><script>twikoo.init({envId:"https://twikoo-api-black.vercel.app/",el:"#tcomment",lang:"zh-CN",path:window.TWIKOO_MAGIC_PATH||window.location.pathname})</script><script id=dsq-count-scr src=//kuilz.disqus.com/count.js async></script></div></div><footer class=small><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/fix-toc.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/alt-title.min.js defer></script><link rel=stylesheet href=//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css><script src=//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js defer></script><script src=//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js defer></script><link rel=stylesheet href=//cdn.jsdelivr.net/npm/katex/dist/katex.min.css><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.min.js defer></script><script src=//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js defer></script><link rel=stylesheet href=//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js defer></script><link rel=stylesheet href=//cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/ol-id.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/comment-utils.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/hash-notes.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/toggle-notes.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/post-nav.min.js defer></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><hr><p class=nav-bottom><span>© <a href=https://github.com/kuilz>kuilz</a> 2023-2025</span>
+<span class=menu-bottom><a href=/post/index.xml type=application/rss+xml title="RSS feed">Subscribe</a>
+<a href=http://creativecommons.org/licenses/by-nc-sa/4.0/ title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
+<a href=/search/>Search</a>
+<a href=#>Back to top</a></span></p></footer></body></html>

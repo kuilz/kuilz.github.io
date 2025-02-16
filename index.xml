@@ -1,30 +1,30 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.github.io/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><follow_challenge><feedId>77547801460211712</feedId><userId>77544334774356992</userId></follow_challenge><language>en-US</language><lastBuildDate>Wed, 12 Feb 2025 20:09:32 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/" rel="self" type="application/rss+xml"/><item><title>Tmux使用简介</title><link>https://kuilz.github.io/blog/2025/02/tmux_intro/</link><pubDate>Wed, 12 Feb 2025 20:09:32 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/02/tmux_intro/</guid><description><![CDATA[
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.github.io/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><follow_challenge><feedId>77547801460211712</feedId><userId>77544334774356992</userId></follow_challenge><language>en-US</language><lastBuildDate>Wed, 12 Feb 2025 20:09:32 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/" rel="self" type="application/rss+xml"/><item><title>Tmux使用简介</title><link>https://kuilz.github.io/post/2025/02/tmux_intro/</link><pubDate>Wed, 12 Feb 2025 20:09:32 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2025/02/tmux_intro/</guid><description><![CDATA[
         <h2 id="tmux使用简介">Tmux使用简介</h2>
-<p>现在一般都通过ssh连接远程服务器训练深度学习模型，为了实现ssh连接断开时仍能继续训练，一般会使用nohup命令在后台运行训练脚本。但如果用的是pytorch框架，运行一段时间后程[&hellip;] <a href="https://kuilz.github.io/blog/2025/02/tmux_intro/">https://kuilz.github.io/blog/2025/02/tmux_intro/</a></p>
+<p>现在一般都通过ssh连接远程服务器训练深度学习模型，为了实现ssh连接断开时仍能继续训练，一般会使用nohup命令在后台运行训练脚本。但如果用的是pytorch框架，运行一段时间后程[&hellip;] <a href="https://kuilz.github.io/post/2025/02/tmux_intro/">https://kuilz.github.io/post/2025/02/tmux_intro/</a></p>
         
-        ]]></description></item><item><title>Ubuntu杀毒软件ClamAV使用说明</title><link>https://kuilz.github.io/blog/2025/02/clamav_intro/</link><pubDate>Tue, 11 Feb 2025 21:28:03 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/02/clamav_intro/</guid><description><![CDATA[
+        ]]></description></item><item><title>Ubuntu杀毒软件ClamAV使用说明</title><link>https://kuilz.github.io/post/2025/02/clamav_intro/</link><pubDate>Tue, 11 Feb 2025 21:28:03 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2025/02/clamav_intro/</guid><description><![CDATA[
         <h2 id="ubuntu杀毒软件clamav使用说明">Ubuntu杀毒软件ClamAV使用说明</h2>
-<p><a href="https://www.clamav.net/">ClamAV</a> is an open-source antivirus engine for detecting trojans, viruses,[&hellip;] <a href="https://kuilz.github.io/blog/2025/02/clamav_intro/">https://kuilz.github.io/blog/2025/02/clamav_intro/</a></p>
+<p><a href="https://www.clamav.net/">ClamAV</a> is an open-source antivirus engine for detecting trojans, viruses,[&hellip;] <a href="https://kuilz.github.io/post/2025/02/clamav_intro/">https://kuilz.github.io/post/2025/02/clamav_intro/</a></p>
         
-        ]]></description></item><item><title>2025#04 AI Agent</title><link>https://kuilz.github.io/post/2025/02/04_ai_agent/</link><pubDate>Sun, 09 Feb 2025 15:32:01 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2025/02/04_ai_agent/</guid><description><![CDATA[
+        ]]></description></item><item><title>2025#04 AI Agent</title><link>https://kuilz.github.io/blog/2025/02/04_ai_agent/</link><pubDate>Sun, 09 Feb 2025 15:32:01 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/02/04_ai_agent/</guid><description><![CDATA[
         <h2 id="2025-04-ai-agent">2025#04 AI Agent</h2>
 <p>本周看到的信息不多，但也没必要为了<code>周记</code>去刻意搜寻，以后碎片时间尽量看些高质量的内容可能会缓解这一问题。</p>
 <h2 id="文章">文章</h2>
-<p><a href="https://www.ruanyifeng.com/blog/2025/02/weekly-issue-336.html">科技爱好者周刊（第 336 期）：面对 AI，互联网正在[&hellip;] <a href="https://kuilz.github.io/post/2025/02/04_ai_agent/">https://kuilz.github.io/post/2025/02/04_ai_agent/</a></a></p>
+<p><a href="https://www.ruanyifeng.com/blog/2025/02/weekly-issue-336.html">科技爱好者周刊（第 336 期）：面对 AI，互联网正在[&hellip;] <a href="https://kuilz.github.io/blog/2025/02/04_ai_agent/">https://kuilz.github.io/blog/2025/02/04_ai_agent/</a></a></p>
         
-        ]]></description></item><item><title>2025#03 新年快乐</title><link>https://kuilz.github.io/post/2025/02/03_happy_chinese_new_year/</link><pubDate>Sun, 02 Feb 2025 15:38:29 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2025/02/03_happy_chinese_new_year/</guid><description><![CDATA[
+        ]]></description></item><item><title>2025#03 新年快乐</title><link>https://kuilz.github.io/blog/2025/02/03_happy_chinese_new_year/</link><pubDate>Sun, 02 Feb 2025 15:38:29 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/02/03_happy_chinese_new_year/</guid><description><![CDATA[
         <h2 id="2025-03-新年快乐">2025#03 新年快乐</h2>
 <p>新年快乐呀~</p>
-<p>最近一周忙得不可开交，一方面是过年的常规项目：准备年货、走亲访友，另一方面是我回家的常规项目：帮老爸老妈干活。帮他们干活既不能帮他们减轻太多体力负担，又不能给他[&hellip;] <a href="https://kuilz.github.io/post/2025/02/03_happy_chinese_new_year/">https://kuilz.github.io/post/2025/02/03_happy_chinese_new_year/</a></p>
+<p>最近一周忙得不可开交，一方面是过年的常规项目：准备年货、走亲访友，另一方面是我回家的常规项目：帮老爸老妈干活。帮他们干活既不能帮他们减轻太多体力负担，又不能给他[&hellip;] <a href="https://kuilz.github.io/blog/2025/02/03_happy_chinese_new_year/">https://kuilz.github.io/blog/2025/02/03_happy_chinese_new_year/</a></p>
         
-        ]]></description></item><item><title>2025#02 Just Don't Cry 📵</title><link>https://kuilz.github.io/post/2025/01/02_just_dont_cry/</link><pubDate>Sun, 26 Jan 2025 18:13:24 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2025/01/02_just_dont_cry/</guid><description><![CDATA[
+        ]]></description></item><item><title>2025#02 Just Don't Cry 📵</title><link>https://kuilz.github.io/blog/2025/01/02_just_dont_cry/</link><pubDate>Sun, 26 Jan 2025 18:13:24 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/01/02_just_dont_cry/</guid><description><![CDATA[
         <h2 id="2025-02-just-don-t-cry">2025#02 Just Don&rsquo;t Cry 📵</h2>
 <p>这周本来打算把书摘放上来，但手机刚刚摔碎了，完全用不了。</p>
-<p>Linus在自传《Just for Fun》里谈到了生命的意义，他觉得不只是生[&hellip;] <a href="https://kuilz.github.io/post/2025/01/02_just_dont_cry/">https://kuilz.github.io/post/2025/01/02_just_dont_cry/</a></p>
+<p>Linus在自传《Just for Fun》里谈到了生命的意义，他觉得不只是生[&hellip;] <a href="https://kuilz.github.io/blog/2025/01/02_just_dont_cry/">https://kuilz.github.io/blog/2025/01/02_just_dont_cry/</a></p>
         
-        ]]></description></item><item><title>2025#01 一次尝试</title><link>https://kuilz.github.io/post/2025/01/01_one_try/</link><pubDate>Sun, 19 Jan 2025 21:15:23 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2025/01/01_one_try/</guid><description><![CDATA[
+        ]]></description></item><item><title>2025#01 一次尝试</title><link>https://kuilz.github.io/blog/2025/01/01_one_try/</link><pubDate>Sun, 19 Jan 2025 21:15:23 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/01/01_one_try/</guid><description><![CDATA[
         <h2 id="2025-01-一次尝试">2025#01 一次尝试</h2>
-<p>我好像总爱琢磨点什么，以使自己看上去不会那么浅薄。但随着见过越来越多优秀的人，我发觉当下最不缺的就是有聪明脑袋和优质想法的人，最缺乏的是执行力出众的人。对我自己来说，执行力更[&hellip;] <a href="https://kuilz.github.io/post/2025/01/01_one_try/">https://kuilz.github.io/post/2025/01/01_one_try/</a></p>
+<p>我好像总爱琢磨点什么，以使自己看上去不会那么浅薄。但随着见过越来越多优秀的人，我发觉当下最不缺的就是有聪明脑袋和优质想法的人，最缺乏的是执行力出众的人。对我自己来说，执行力更[&hellip;] <a href="https://kuilz.github.io/blog/2025/01/01_one_try/">https://kuilz.github.io/blog/2025/01/01_one_try/</a></p>
         
         ]]></description></item><item><title>Now</title><link>https://kuilz.github.io/now/</link><pubDate>Thu, 19 Sep 2024 17:56:30 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/now/</guid><description><![CDATA[
         <div style="text-align: right;">
@@ -35,7 +35,7 @@
 <ol>
 <li>假设有许久不见的老友[&hellip;] <a href="https://kuilz.github.io/now/">https://kuilz.github.io/now/</a></li></ol>
         
-        ]]></description></item><item><title>大学生自救计划——跑步打卡</title><link>https://kuilz.github.io/post/2024/05/running/</link><pubDate>Sat, 25 May 2024 23:38:47 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2024/05/running/</guid><description><![CDATA[
+        ]]></description></item><item><title>大学生自救计划——跑步打卡</title><link>https://kuilz.github.io/blog/2024/05/running/</link><pubDate>Sat, 25 May 2024 23:38:47 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2024/05/running/</guid><description><![CDATA[
         <p>打算捡起来落下了一年多的夜跑的习惯。</p>
 <h2 id="2024">2024</h2>
 <h3 id="6月-你好">6月，你好</h3>
@@ -47,15 +47,15 @@
 </div>
 <h4 id="2024-06-29">2024-06-29</h4>
 <p><strong>What I Read Today</strong></p>
-<p><a href="https://mp.weixin.qq.com/s/O8klxfWDcGqG1E1TUjyjUg">是什么造成了中国软[&hellip;] <a href="https://kuilz.github.io/post/2024/05/running/">https://kuilz.github.io/post/2024/05/running/</a></a></p>
+<p><a href="https://mp.weixin.qq.com/s/O8klxfWDcGqG1E1TUjyjUg">是什么造成了中国软[&hellip;] <a href="https://kuilz.github.io/blog/2024/05/running/">https://kuilz.github.io/blog/2024/05/running/</a></a></p>
         
-        ]]></description></item><item><title>设计模式——单例模式</title><link>https://kuilz.github.io/blog/2024/05/design_pattern_singleton_pattern/</link><pubDate>Mon, 13 May 2024 21:24:09 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2024/05/design_pattern_singleton_pattern/</guid><description><![CDATA[
+        ]]></description></item><item><title>设计模式——单例模式</title><link>https://kuilz.github.io/post/2024/05/design_pattern_singleton_pattern/</link><pubDate>Mon, 13 May 2024 21:24:09 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2024/05/design_pattern_singleton_pattern/</guid><description><![CDATA[
         <p>这篇文章本来还是按照<a href="https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/">上一篇</a>的风格写的，但发现太耗费精力的，于是变成了最简单粗暴的版本。后面需要学会在有趣与直接、丰富与简洁之间找到平衡。</p>
-<p><strong>单例模式（Singleton Pattern）是一种设计模式，[&hellip;] <a href="https://kuilz.github.io/blog/2024/05/design_pattern_singleton_pattern/">https://kuilz.github.io/blog/2024/05/design_pattern_singleton_pattern/</a></strong></p>
+<p><strong>单例模式（Singleton Pattern）是一种设计模式，[&hellip;] <a href="https://kuilz.github.io/post/2024/05/design_pattern_singleton_pattern/">https://kuilz.github.io/post/2024/05/design_pattern_singleton_pattern/</a></strong></p>
         
-        ]]></description></item><item><title>Docker基本使用</title><link>https://kuilz.github.io/blog/2024/05/docker-intro/</link><pubDate>Sun, 12 May 2024 11:11:50 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2024/05/docker-intro/</guid><description><![CDATA[
+        ]]></description></item><item><title>Docker基本使用</title><link>https://kuilz.github.io/post/2024/05/docker-intro/</link><pubDate>Sun, 12 May 2024 11:11:50 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2024/05/docker-intro/</guid><description><![CDATA[
         <pre><code>kuilz原创性自我评估(KCSE)：10%
 </code></pre>
-<p>知道Docker很好用，但一直没养成用它的习惯，所以基本命令都记不清，然后就更不怎么用，恶性循环。。。打算以本文为契机，将Docker正式纳入我的工作[&hellip;] <a href="https://kuilz.github.io/blog/2024/05/docker-intro/">https://kuilz.github.io/blog/2024/05/docker-intro/</a></p>
+<p>知道Docker很好用，但一直没养成用它的习惯，所以基本命令都记不清，然后就更不怎么用，恶性循环。。。打算以本文为契机，将Docker正式纳入我的工作[&hellip;] <a href="https://kuilz.github.io/post/2024/05/docker-intro/">https://kuilz.github.io/post/2024/05/docker-intro/</a></p>
         
         ]]></description></item></channel></rss>

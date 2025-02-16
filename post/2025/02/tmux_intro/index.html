@@ -1,0 +1,48 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Tmux使用简介 - Kui's Blog</title>
+<meta property="og:title" content="Tmux使用简介 - Kui's Blog"><meta name=twitter:card content="summary"><meta property="description" content="现在一般都通过ssh连接远程服务器训练深度学习模型，为了实现ssh连接断开时仍能继续训练，一般会使用nohup命令在后台运行训练脚本。但如果用的是pytorch框架，运行一段时间后程序仍有可能会中断：
+[&amp;hellip;] DDP Exception · Issue #67538 · pytorch/pytorch
+[&amp;hellip;] raise &amp;hellip;"><meta property="og:description" content="现在一般都通过ssh连接远程服务器训练深度学习模型，为了实现ssh连接断开时仍能继续训练，一般会使用nohup命令在后台运行训练脚本。但如果用的是pytorch框架，运行一段时间后程序仍有可能会中断：
+[&amp;hellip;] DDP Exception · Issue #67538 · pytorch/pytorch
+[&amp;hellip;] raise &amp;hellip;"><link rel=stylesheet href=/css/style.css><link rel=stylesheet href=/css/fonts.css><link rel=stylesheet href=/css/custom.css><link rel=stylesheet href=https://indestructibletype.com/fonts/Jost.css></head><body class="single post"><div class=crop-h></div><div class=crop-v></div><div class=crop-c></div><nav class="nav-top small"><div class=logo><a href=/><img src=/images/avatar.jpg alt=kuilz></a></div><div class=menu><span><a href=/search/>Search</a></span>
+<span><a href=/>Home</a></span>
+<span><a href=/blog/>Blog</a></span>
+<span class=active><a href=/post/>Post</a></span>
+<span><a href=/categories/>Categories</a></span>
+<span><a href=/tags/>Tags</a></span>
+<span><a href=/series/>Series</a></span>
+<span><a href=/index.xml>Subscribe</a></span>
+<span><a href=/now/>Now</a></span>
+<span><a href=/about/>About</a></span></div></nav><div class=article-meta><h1 class=title>Tmux使用简介</h1><h3 class=meta-line><span><span class=author>kuilz</span>
+<span class=date>2025-02-12</span>
+</span><span class=term>{<a href=/categories/%E5%B7%A5%E5%85%B7/ class=term-cat>工具</a>}</span></h3></div><div class=main><h2 id=tmux使用简介>Tmux使用简介</h2><p>现在一般都通过ssh连接远程服务器训练深度学习模型，为了实现ssh连接断开时仍能继续训练，一般会使用nohup命令在后台运行训练脚本。但如果用的是pytorch框架，运行一段时间后程序仍有可能会中断：</p><p><a href=https://github.com/pytorch/pytorch/issues/67538>DDP Exception · Issue #67538 · pytorch/pytorch</a></p><pre><code class=language-bash>    raise SignalException(f&quot;Process {os.getpid()} got signal: {sigval}&quot;, sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 102227 got signal: 1
+</code></pre><p>使用tmux可以解决这一问题。</p><p><a href=https://github.com/tmux/tmux/wiki>Tmux</a> is a terminal multiplexer. It lets you switch easily between several programs in one terminal, detach them (<strong>they keep running in the background</strong>) and reattach them to a different terminal.</p><p><strong>基本用法</strong></p><pre><code class=language-bash># ubuntu安装
+sudo apt-get install tmux
+
+# 新建会话
+tmux new -s &lt;session-name&gt;
+
+# 接入会话
+tmux attach -t &lt;session-name&gt;
+
+# 分离窗口，或者用快捷键`Ctrl+b d`，其中`Ctrl+b`为前缀键，用于唤醒快捷键。
+tmux detach
+
+# 杀死会话
+tmux kill-session -t &lt;session-name&gt;
+
+# 切换会话
+tmux switch -t &lt;session-name&gt;
+
+# 列出会话
+tmux ls
+</code></pre><p><strong>最简操作流程</strong></p><pre><code class=language-txt>1. 新建会话tmux new -s my_session。
+2. 在Tmux窗口运行所需的程序。
+3. 按下快捷键Ctrl+b d将会话分离。
+4. 下次使用时，重新连接到会话tmux attach -t my_session。
+</code></pre><p><strong>References</strong></p><p>[1] <a href=https://www.ruanyifeng.com/blog/2019/10/tmux.html>Tmux 使用教程 - 阮一峰的网络日志</a></p><nav class="post-nav fullwidth kai"><span class=nav-prev>&larr; <a href=/post/2025/02/clamav_intro/>Ubuntu杀毒软件ClamAV使用说明</a></span>
+<span class=nav-next>&empty; &rarr;</span></nav><div><div class=pagination__title><span class=pagination__title-h style=font-size:20px>💬评论</span><hr></div><div id=tcomment></div><script src=https://cdn.staticfile.org/twikoo/1.6.7/twikoo.all.min.js></script><script>twikoo.init({envId:"https://twikoo-api-black.vercel.app/",el:"#tcomment",lang:"zh-CN",path:window.TWIKOO_MAGIC_PATH||window.location.pathname})</script><script id=dsq-count-scr src=//kuilz.disqus.com/count.js async></script></div></div><footer class=small><link rel=stylesheet href=//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css><script src=//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js defer></script><script src=//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js defer></script><link rel=stylesheet href=//cdn.jsdelivr.net/npm/katex/dist/katex.min.css><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.min.js defer></script><script src=//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js defer></script><link rel=stylesheet href=//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js defer></script><script src=//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/comment-utils.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/hash-notes.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/toggle-notes.min.js defer></script><script src=https://cdn.jsdelivr.net/npm/@xiee/utils/js/post-nav.min.js defer></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><hr><p class=nav-bottom><span>© <a href=https://github.com/kuilz>kuilz</a> 2023-2025</span>
+<span class=menu-bottom><a href=/post/index.xml type=application/rss+xml title="RSS feed">Subscribe</a>
+<a href=http://creativecommons.org/licenses/by-nc-sa/4.0/ title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
+<a href=/search/>Search</a>
+<a href=#>Back to top</a></span></p></footer></body></html>
