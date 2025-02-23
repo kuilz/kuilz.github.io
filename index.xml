@@ -1,4 +1,11 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.github.io/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><follow_challenge><feedId>77547801460211712</feedId><userId>77544334774356992</userId></follow_challenge><language>en-US</language><lastBuildDate>Sun, 16 Feb 2025 20:51:05 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/" rel="self" type="application/rss+xml"/><item><title>2025#05 方便的缺点</title><link>https://kuilz.github.io/blog/2025/02/05_cons_of_convenience/</link><pubDate>Sun, 16 Feb 2025 20:51:05 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/02/05_cons_of_convenience/</guid><description><![CDATA[
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.github.io/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><follow_challenge><feedId>77547801460211712</feedId><userId>77544334774356992</userId></follow_challenge><language>en-US</language><lastBuildDate>Sun, 23 Feb 2025 22:12:04 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/" rel="self" type="application/rss+xml"/><item><title>2025#08 混合语言</title><link>https://kuilz.github.io/blog/2025/02/08_mixed_languages/</link><pubDate>Sun, 23 Feb 2025 22:12:04 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/02/08_mixed_languages/</guid><description><![CDATA[
+        <h2 id="2025-08-混合语言">2025#08 混合语言</h2>
+<p>周记决定做些调整：</p>
+<ol>
+<li>命名方式调整为<code>yyyy#ww title</code>，即期数跟着周数走，如本周是2025年第8周。之前是按顺序编号，不是周数。</li>
+<li>更新时间调整为周六。如果错过的话，有[&hellip;] <a href="https://kuilz.github.io/blog/2025/02/08_mixed_languages/">https://kuilz.github.io/blog/2025/02/08_mixed_languages/</a></li></ol>
+        
+        ]]></description></item><item><title>2025#05 方便的缺点</title><link>https://kuilz.github.io/blog/2025/02/05_cons_of_convenience/</link><pubDate>Sun, 16 Feb 2025 20:51:05 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/02/05_cons_of_convenience/</guid><description><![CDATA[
         <h2 id="2025-05-方便的缺点">2025#05 方便的缺点</h2>
 <p>开学了，想回到正常的节奏。和放假前相比，最近明显更爱刷手机了。在获取信息方面，手机最大的缺点就是太方便了，这可不是在夸它。我们这副躯体是在匮乏中进化过来的，食物匮乏、能量匮[&hellip;] <a href="https://kuilz.github.io/blog/2025/02/05_cons_of_convenience/">https://kuilz.github.io/blog/2025/02/05_cons_of_convenience/</a></p>
         
@@ -52,9 +59,5 @@
 <h4 id="2024-06-29">2024-06-29</h4>
 <p><strong>What I Read Today</strong></p>
 <p><a href="https://mp.weixin.qq.com/s/O8klxfWDcGqG1E1TUjyjUg">是什么造成了中国软[&hellip;] <a href="https://kuilz.github.io/blog/2024/05/running/">https://kuilz.github.io/blog/2024/05/running/</a></a></p>
-        
-        ]]></description></item><item><title>设计模式——单例模式</title><link>https://kuilz.github.io/post/2024/05/design_pattern_singleton_pattern/</link><pubDate>Mon, 13 May 2024 21:24:09 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/post/2024/05/design_pattern_singleton_pattern/</guid><description><![CDATA[
-        <p>这篇文章本来还是按照<a href="https://kuilz.github.io/blog/2024/05/design_pattern_strategy_pattern/">上一篇</a>的风格写的，但发现太耗费精力的，于是变成了最简单粗暴的版本。后面需要学会在有趣与直接、丰富与简洁之间找到平衡。</p>
-<p><strong>单例模式（Singleton Pattern）是一种设计模式，[&hellip;] <a href="https://kuilz.github.io/post/2024/05/design_pattern_singleton_pattern/">https://kuilz.github.io/post/2024/05/design_pattern_singleton_pattern/</a></strong></p>
         
         ]]></description></item></channel></rss>
