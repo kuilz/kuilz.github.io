@@ -1,4 +1,12 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Kui's Blog</title><link>https://kuilz.github.io/blog/</link><description>Recent content in Blog on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><follow_challenge><feedId>77547801460211712</feedId><userId>77544334774356992</userId></follow_challenge><language>en-US</language><lastBuildDate>Sat, 19 Apr 2025 23:18:19 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/blog/" rel="self" type="application/rss+xml"/><item><title>2025#16 道</title><link>https://kuilz.github.io/blog/2025/04/16_tao/</link><pubDate>Sat, 19 Apr 2025 23:18:19 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/04/16_tao/</guid><description><![CDATA[
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Kui's Blog</title><link>https://kuilz.github.io/blog/</link><description>Recent content in Blog on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><follow_challenge><feedId>77547801460211712</feedId><userId>77544334774356992</userId></follow_challenge><language>en-US</language><lastBuildDate>Sat, 26 Apr 2025 22:27:48 +0800</lastBuildDate><atom:link href="https://kuilz.github.io/blog/" rel="self" type="application/rss+xml"/><item><title>2025#17 即时零售</title><link>https://kuilz.github.io/blog/2025/04/17_instant_retail/</link><pubDate>Sat, 26 Apr 2025 22:27:48 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/04/17_instant_retail/</guid><description><![CDATA[
+        <h2 id="2025-17-即时零售">2025#17 即时零售</h2>
+<p>本期摘录多，想法少。</p>
+<h2 id="文章">文章</h2>
+<p><a href="https://mp.weixin.qq.com/s/ZZbanfzLd710aEA1g30lJQ">京东外卖开饭，美团闪购「偷家」</a></p>
+<blockquote>
+<p>表面上看，是京东咄咄逼人的踏入了外卖市场，带来了一些让美团感到威胁的变数，但实际上，依托外卖业务的配送网络，美团[&hellip;] <a href="https://kuilz.github.io/blog/2025/04/17_instant_retail/">https://kuilz.github.io/blog/2025/04/17_instant_retail/</a></p></blockquote>
+        
+        ]]></description></item><item><title>2025#16 道</title><link>https://kuilz.github.io/blog/2025/04/16_tao/</link><pubDate>Sat, 19 Apr 2025 23:18:19 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/04/16_tao/</guid><description><![CDATA[
         <h2 id="2025-16-道">2025#16 道</h2>
 <p>读文章时，仿佛看到自己在海边捡贝壳，痴痴看着手中贝壳的纹理和光泽。</p>
 <h2 id="文章">文章</h2>
@@ -48,12 +56,5 @@
         <h2 id="2025-09-thank-you">2025#09 Thank You</h2>
 <p>刷力扣时觉得自己挺蠢的，很多方法都想不到，没少请教claude。越刷越难过，不知道自己做这些有什么意义，明明LLM更擅长。</p>
 <p>让claude给我提建议时，这家伙竟然昧[&hellip;] <a href="https://kuilz.github.io/blog/2025/03/09_thank_you/">https://kuilz.github.io/blog/2025/03/09_thank_you/</a></p>
-        
-        ]]></description></item><item><title>2025#08 混合语言</title><link>https://kuilz.github.io/blog/2025/02/08_mixed_languages/</link><pubDate>Sun, 23 Feb 2025 22:12:04 +0800</pubDate><author>kuilz</author><guid>https://kuilz.github.io/blog/2025/02/08_mixed_languages/</guid><description><![CDATA[
-        <h2 id="2025-08-混合语言">2025#08 混合语言</h2>
-<p>周记决定做些调整：</p>
-<ol>
-<li>命名方式调整为<code>yyyy#ww title</code>，即期数跟着周数走，如本周是2025年第8周。之前是按顺序编号，不是周数。</li>
-<li>更新时间调整为周六。如果错过的话，有[&hellip;] <a href="https://kuilz.github.io/blog/2025/02/08_mixed_languages/">https://kuilz.github.io/blog/2025/02/08_mixed_languages/</a></li></ol>
         
         ]]></description></item></channel></rss>
