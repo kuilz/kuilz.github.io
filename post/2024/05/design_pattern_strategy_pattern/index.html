@@ -11,7 +11,8 @@
 <span><a href=/series/>Series</a></span>
 <span><a href=/index.xml>Subscribe</a></span>
 <span><a href=/now/>Now</a></span>
-<span><a href=/about/>About</a></span></div></nav><div class=article-meta><h1 class=title>设计模式——策略模式</h1><h3 class=meta-line><span><span class=author>kuilz</span>
+<span><a href=/about/>About</a></span>
+<span><a href=/links/>Links</a></span></div></nav><div class=article-meta><h1 class=title>设计模式——策略模式</h1><h3 class=meta-line><span><span class=author>kuilz</span>
 <span class=date>2024-05-10</span>
 </span><span class=term>{<a href=/categories/system-design/ class=term-cat>System Design</a>}
 <a href=/tags/design-pattern/ class=term-tag>[Design Pattern]</a></span></h3></div><div class=main><nav id=TableOfContents><ul><li><a href=#前言>前言</a></li><li><a href=#正文>正文</a></li><li><a href=#附录-适合中国宝宝体质的笔记>附录：适合中国宝宝体质的笔记</a><ul><li><a href=#定义>定义</a></li><li><a href=#类图>类图</a></li><li><a href=#jdk>JDK</a></li></ul></li><li><a href=#参考>参考</a></li></ul></nav><h2 id=前言>前言</h2><p>最近闲暇时在看<a href=https://book.douban.com/subject/35097022/>《Head First Design Pattern》</a>这本书，感觉蛮有意思的，不妨记录一下。</p><p>叠甲：笔者才疏学浅，水平有限，错漏之处，欢迎指出。</p><h2 id=正文>正文</h2><p>面向对象设计有几个基本特性：抽象、封装、继承和多态。在设计过程中，我们会把一个事物的属性和方法封装起来，成为一个类，如果这些属性和方法是多个类通用的，我们还会把通用的部分单独封装起来，作为父类，从而实现代码复用。但一个类继承父类实现代码复用的同时，也有了一些限制：</p><ol><li>父类有的行为它都会有。</li><li>它的行为不能动态改变。</li></ol><p>这样说可能难以理解，不如从我们最先接触面向对象时的例子开始，让我们把记忆拉回到大一大二，看看熟悉的猫吃鱼，狗吃肉，奥特曼爱打小怪兽。</p><p>Animal class:</p><pre><code class=language-java>package org.kuilz.StrategyPattern.original;

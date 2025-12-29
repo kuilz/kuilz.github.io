@@ -29,6 +29,13 @@ img {
   text-align: center;
   margin: 2em 0 1em;
 }
+
+.single .main h3, .main h3,
+.single .main h4, .main h4,
+.single .main h5, .main h5,
+.single .main h6, .main h6 {
+  text-align: left;
+}
 dl, fieldset {
   background-color: lightyellow;
   font-size: .9em;
@@ -130,6 +137,90 @@ span.hash-note::before { content: "　# "; }
     border-left: 1px solid;
     padding-left: 1em;
   }
+}
+
+/* Friends page */
+.friend-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+.friend-card {
+  background: var(--bg-body, #fff);
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: .75rem;
+  transition: box-shadow .2s ease, transform .1s ease;
+  overflow: hidden;
+}
+.friend-card__link {
+  display: flex;
+  gap: .9rem;
+  padding: .9rem;
+  text-decoration: none;
+  color: inherit;
+  align-items: center;
+  border-bottom: 0 !important;
+}
+.friend-card__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #f6f6f6;
+}
+.friend-card__avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #555;
+  font-size: 1rem;
+}
+.friend-card__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.friend-card__name {
+  font-weight: 600;
+  line-height: 1.2;
+}
+.friend-card__url {
+  font-size: .85em;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.friend-card__desc {
+  font-size: .9em;
+  color: #444;
+  margin-top: .2rem;
+}
+.friend-card__note {
+  font-size: .85em;
+  color: #555;
+  margin-top: .35rem;
+}
+.friend-card__label {
+  display: inline-block;
+  font-size: .75em;
+  color: #999;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: .25rem;
+  padding: 0 .25rem;
+  margin-right: .4rem;
+  vertical-align: baseline;
+}
+.friend-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  transform: translateY(-1px);
+}
+.friend-card__link:hover {
+  border-bottom: 0 !important;
 }
 
 @media print {

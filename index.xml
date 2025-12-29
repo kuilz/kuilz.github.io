@@ -1,4 +1,21 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.life/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><follow_challenge><feedId>77547801460211712</feedId><userId>77544334774356992</userId></follow_challenge><language>en-US</language><lastBuildDate>Thu, 25 Dec 2025 08:24:04 +0800</lastBuildDate><atom:link href="https://kuilz.life/" rel="self" type="application/rss+xml"/><item><title>我的理想</title><link>https://kuilz.life/blog/2025/12/my_dream/</link><pubDate>Thu, 25 Dec 2025 08:24:04 +0800</pubDate><author>kuilz</author><guid>https://kuilz.life/blog/2025/12/my_dream/</guid><description><![CDATA[
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.life/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><follow_challenge><feedId>77547801460211712</feedId><userId>77544334774356992</userId></follow_challenge><language>en-US</language><lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://kuilz.life/" rel="self" type="application/rss+xml"/><item><title>Links</title><link>https://kuilz.life/links/</link><pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate><author>kuilz</author><guid>https://kuilz.life/links/</guid><description><![CDATA[
+        <h2 id="示例">示例</h2>
+<div class="friend-list">
+  
+<div class="friend-card">
+  <a class="friend-card__link" href="https://example.com" target="_blank" rel="noopener"><div class="friend-card__avatar friend-card__avatar--placeholder">N</div><div class="friend-card__body"><div class="friend-card__name">Name</div><div class="friend-card__url">https://example.com</div><div class="friend-card__desc">这是一个示例博客</div></div>
+  </a>
+</div>
+
+
+</div>
+
+<h2 id="说明">说明</h2>
+<p>友链格式：</p>
+<pre><code class="language-json">{
+    &quot;name&quot;:[&hellip;] <a href="https://kuilz.life/links/">https://kuilz.life/links/</a></code></pre></div></div>
+        
+        ]]></description></item><item><title>我的理想</title><link>https://kuilz.life/blog/2025/12/my_dream/</link><pubDate>Thu, 25 Dec 2025 08:24:04 +0800</pubDate><author>kuilz</author><guid>https://kuilz.life/blog/2025/12/my_dream/</guid><description><![CDATA[
         <p>在今天，我正式宣布：自动化是我的理想，AutoLibLab是我的事业。</p>
 <p>说不定我会为之奋斗一生，说不定过了年我就把这事儿忘了。但我有一种强烈的预感，结果会是前者。</p>
 <p style="text-align: right;">
@@ -64,9 +81,5 @@
         ]]></description></item><item><title>2025#13 YC估值最高的10家公司是做什么的？</title><link>https://kuilz.life/blog/2025/03/13_yc_companies/</link><pubDate>Sat, 29 Mar 2025 20:18:04 +0800</pubDate><author>kuilz</author><guid>https://kuilz.life/blog/2025/03/13_yc_companies/</guid><description><![CDATA[
         <h2 id="2025-13-yc估值最高的10家公司是做什么的">2025#13 YC估值最高的10家公司是做什么的？</h2>
 <p>Y Combinator按估值计算排名前四的公司是Airbnb、DoorDash、Coinbase和Stripe，它们约占总回报的三分之一。[&hellip;] <a href="https://kuilz.life/blog/2025/03/13_yc_companies/">https://kuilz.life/blog/2025/03/13_yc_companies/</a></p>
-        
-        ]]></description></item><item><title>2025#12 王阳明心学</title><link>https://kuilz.life/blog/2025/03/12_yang_ming/</link><pubDate>Sat, 22 Mar 2025 19:42:40 +0800</pubDate><author>kuilz</author><guid>https://kuilz.life/blog/2025/03/12_yang_ming/</guid><description><![CDATA[
-        <h2 id="2025-12-王阳明心学">2025#12 王阳明心学</h2>
-<p>这周很忙，想做后端开发的话，要学很多不常用的东西。而且因为不怎么用，刚看完就会忘掉😂。有时候会想为什么要把大量时间花在自认为无意义&amp;&amp;不喜欢的事情上面，想着[&hellip;] <a href="https://kuilz.life/blog/2025/03/12_yang_ming/">https://kuilz.life/blog/2025/03/12_yang_ming/</a></p>
         
         ]]></description></item></channel></rss>
