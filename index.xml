@@ -1,19 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Kui's Blog</title><link>https://kuilz.life/</link><description>Recent content in Home on Kui's Blog</description><generator>Hugo -- gohugo.io</generator><follow_challenge><feedId>77547801460211712</feedId><userId>77544334774356992</userId></follow_challenge><language>en-US</language><lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://kuilz.life/" rel="self" type="application/rss+xml"/><item><title>Links</title><link>https://kuilz.life/links/</link><pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate><author>kuilz</author><guid>https://kuilz.life/links/</guid><description><![CDATA[
-        <h2 id="示例">示例</h2>
+        <h2 id="每期必看">每期必看</h2>
 <div class="friend-list">
   
 <div class="friend-card">
-  <a class="friend-card__link" href="https://example.com" target="_blank" rel="noopener"><div class="friend-card__avatar friend-card__avatar--placeholder">N</div><div class="friend-card__body"><div class="friend-card__name">Name</div><div class="friend-card__url">https://example.com</div><div class="friend-card__desc">这是一个示例博客</div></div>
-  </a>
-</div>
-
-
-</div>
-
-<h2 id="说明">说明</h2>
-<p>友链格式：</p>
-<pre><code class="language-json">{
-    &quot;name&quot;:[&hellip;] <a href="https://kuilz.life/links/">https://kuilz.life/links/</a></code></pre></div></div>
+  <a class="friend-card__link" href="https://yigengjiang.github.io/posts/" target="_blank" rel="noopener"><img class="friend-card__avatar" src="https://yigengjiang.github.io/images/bird.jpg" alt="yigeng&#39;s blog"><div class="friend-card__body"><div class="friend-card__name">yigeng&#39;s blog</div><div class="friend-card__url">https://yigengjiang.github.io/posts/</div><div class="friend-card__desc">The Fool&#39;s blog</div><div class="friend-card__note"><span class="friend-card__label">博主按</span>我的挚友[&hellip;] <a href="https://kuilz.life/links/">https://kuilz.life/links/</a></div></div></a></div></div>
         
         ]]></description></item><item><title>我的理想</title><link>https://kuilz.life/blog/2025/12/my_dream/</link><pubDate>Thu, 25 Dec 2025 08:24:04 +0800</pubDate><author>kuilz</author><guid>https://kuilz.life/blog/2025/12/my_dream/</guid><description><![CDATA[
         <p>在今天，我正式宣布：自动化是我的理想，AutoLibLab是我的事业。</p>
